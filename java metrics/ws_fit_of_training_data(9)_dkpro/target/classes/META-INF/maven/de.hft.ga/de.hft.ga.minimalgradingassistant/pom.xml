@@ -1,0 +1,279 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>          
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+            </plugins>      
+        </pluginManagement> 
+    </build>
+    
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+    <artifactId>dkpro-parent-pom</artifactId>
+    <version>9</version>
+  </parent>
+  <groupId>de.hft.ga</groupId>
+  <artifactId>de.hft.ga.minimalgradingassistant</artifactId>
+  <version>0.0.1</version>
+ <repositories>
+        <repository>
+            <id>ukp-oss-releases</id>
+            <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases</url>
+        </repository>
+        <repository>
+            <id>ukp-oss-snapshots</id>
+            <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-snapshots</url>
+        </repository>
+    </repositories>
+ 
+ <!--  
+  <repositories>
+    <repository>
+    <id>ukp-oss-model-releases</id>
+    <url>http://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-model-releases-local</url>
+    </repository>   
+    <repository>
+    <id>ukp-oss-s</id>
+    <url>https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-snapshots-local/</url>
+    </repository>
+    <repository>
+    <id>ukp-oss-r</id>
+    <url>https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-ukp-releases-local/</url>
+    </repository>       
+</repositories>
+--> 
+
+
+<dependencies>	
+<dependency>
+  <groupId>dkpro.similarity</groupId>
+  <artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
+  <version>2.1.0</version>
+</dependency>
+
+<dependency>
+		<groupId>org.apache.opennlp</groupId>
+		<artifactId>opennlp-tools</artifactId>
+		<version>1.5.3</version>
+</dependency>
+<dependency>
+		<groupId>xml-apis</groupId>
+		<artifactId>xml-apis</artifactId>
+		<version>1.0.b2</version>
+</dependency>
+<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>de.tudarmstadt.ukp.dkpro.core.api.lexmorph-asl</artifactId>
+		<version>1.5.0</version>
+</dependency>
+<dependency>
+		<groupId>org.apache.uima</groupId>
+		<artifactId>uimafit-core</artifactId>
+		<version>2.0.0</version>
+</dependency>
+<dependency>
+		<groupId>edu.stanford.nlp</groupId>
+		<artifactId>stanford-corenlp</artifactId>
+		<version>3.2.0</version>
+</dependency>
+<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
+		<version>1.5.0</version>
+</dependency>
+<dependency>
+		<groupId>org.apache.uima</groupId>
+		<artifactId>uimaj-core</artifactId>
+		<version> 2.4.2 </version>
+</dependency>
+<dependency>
+		<groupId>dkpro.similarity</groupId>
+		<artifactId>dkpro.similarity.algorithms.structure-asl</artifactId>
+		<version>2.1.0</version>
+</dependency>
+<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>de.tudarmstadt.ukp.dkpro.core.api.syntax-asl</artifactId>
+		<version>1.5.0</version>
+</dependency>
+
+<dependency>
+	<groupId>org.glassfish</groupId>
+	<artifactId>javax.json</artifactId>
+	<version>1.0.4</version>
+</dependency>
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>org.json</artifactId>
+    <version>chargebee-1.0</version>
+</dependency>
+<dependency>
+	<groupId>org.rendersnake</groupId>
+	<artifactId>rendersnake</artifactId>
+	<version>1.8</version>
+</dependency>
+<dependency>
+	<groupId>net.sourceforge.jexcelapi</groupId>
+	<artifactId>jxl</artifactId>
+	<version>2.6.12</version>
+</dependency>
+<dependency>
+  <groupId>dkpro.similarity</groupId>
+  <artifactId>dkpro.similarity.algorithms.api-asl</artifactId>
+  <version>2.1.0</version>
+  <scope>compile</scope>
+</dependency>
+<dependency>
+  <groupId>dkpro.similarity</groupId>
+  <artifactId>dkpro.similarity.algorithms.lexical-asl</artifactId>
+  <version>2.1.0</version>
+  <scope>compile</scope>
+  <exclusions>
+  	<exclusion>
+  		<artifactId>xalan</artifactId>
+  		<groupId>xalan</groupId>
+  	</exclusion>
+  </exclusions>
+</dependency>
+ 
+<dependency>
+  <groupId>dkpro.similarity</groupId>
+  <artifactId>dkpro.similarity.example-gpl</artifactId>
+  <version>2.1.0</version>
+  <scope>compile</scope>
+  <exclusions>
+  	<exclusion>
+  		<artifactId>xalan</artifactId>
+  		<groupId>xalan</groupId>
+  	</exclusion>
+  	<exclusion>
+  		<artifactId>xercesImpl</artifactId>
+  		<groupId>xerces</groupId>
+  	</exclusion>
+  </exclusions>
+ </dependency>
+
+ 
+	
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>de.tudarmstadt.ukp.dkpro.core.tokit-asl</artifactId>
+		<version>1.5.0</version>
+	</dependency>
+	 
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.opennlp-asl
+		</artifactId>
+		<version>1.5.0</version>
+	</dependency>
+	  
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.clearnlp-asl
+		</artifactId>
+		<version>1.6.0</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>de.tudarmstadt.ukp.dkpro.core.snowball-asl</artifactId>
+		<version>1.6.0</version>
+	</dependency>
+	  
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.examples-asl
+		</artifactId>
+		<version>1.5.0</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.stanfordnlp-gpl
+		</artifactId>
+		<version>1.5.0</version>
+		<exclusions>
+			<exclusion>
+				<artifactId>jaxb-api</artifactId>
+				<groupId>javax.xml.bind</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.io.text-asl
+		</artifactId>
+		<version>1.5.0</version>
+	</dependency>
+	  
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.norvig-asl
+		</artifactId>
+		<version>1.6.0</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>de.tudarmstadt.ukp.dkpro.core.jazzy-asl</artifactId>
+		<version>1.6.0</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.languagetool-asl
+		</artifactId>
+		<version>1.6.0</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.stopwordremover-asl
+		</artifactId>
+		<version>1.6.0</version>
+	</dependency>
+	<dependency>
+		<groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+		<artifactId>
+			de.tudarmstadt.ukp.dkpro.core.io.pdf-asl
+		</artifactId>
+		<version>1.6.0</version>
+	</dependency>
+	  
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.3.2</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>2.4</version>
+	</dependency>
+</dependencies>
+<licenses>
+	  <license>
+	    <name>GNU GPL v3 or later</name>
+	    <url>http://www.gnu.org/copyleft/gpl.html</url>
+	    <distribution>manual</distribution>
+	  </license>
+</licenses>
+</project>
